@@ -1,7 +1,7 @@
 const myCategory = new URLSearchParams(window.location.search).get("category");
 
 // Finder 'category_list_container' - her skal produktlisten indsættes
-let listContainer = document.querySelector(".category_list_container");
+let listContainer = document.querySelector(".productlist_container");
 
 const overskrift = document.querySelector("h1");
 
@@ -20,16 +20,21 @@ function showList(products) {
 
   const markup = products
     .map(
-      (product) => `            
-            <article class="item">
-                <img src="https://kea-alt-del.dk/t7/images/webp/640/${product.id}.webp" alt="${product.productdisplayname}">
-                <h2>${product.productdisplayname}</h2>
-                <h3>${product.brandname}</h3>
-                <div class="price">
-                    <p>${product.price},-</p>
+      (product) => `  
+      <div class="box7">
+                <a href="product.html"><img src="https://kea-alt-del.dk/t7/images/webp/640/${product.id}.webp"
+                        alt=${product.productdisplayname}></a>
+                <h3>${product.productdisplayname}</h3>
+                <p>${product.category}</p>
+                <p>${product.price},- DKK</p>
+                <div class="discount ${product.discount && "isOnSale"}" >
+                    <p>${product.discount}%</p>
                 </div>
-                <a href="produkt.html?id=${product.id}">Read more</a>
-            </article>`
+                <div class="soldout ${product.soldout && "isSoldOut"}">
+                    <p>${product.soldout}</p>
+                </div>
+                <a href="product.html?id=${product.id}">Read More</a>
+    </div>`
     )
     .join("");
   // .join("") samler alle elementerne i arrayet til én stor streng uden mellemrum eller separatorer. (default kommer der komma ved join)
