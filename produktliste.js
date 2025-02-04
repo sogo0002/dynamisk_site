@@ -27,11 +27,12 @@ function showList(products) {
                 <h3>${product.productdisplayname}</h3>
                 <p>${product.category}</p>
                 <p>${product.price},- DKK</p>
+                <p class="discountprice ${product.discount && "isOnSale"}" <span>${Math.floor(product.price * (1 - product.discount / 100))}<span/>,- DKK</p>
                 <div class="discount ${product.discount && "isOnSale"}" >
                     <p>${product.discount}%</p>
                 </div>
                 <div class="soldout ${product.soldout && "isSoldOut"}">
-                    <p>${product.soldout}</p>
+                    <p>SOLDOUT</p>
                 </div>
                 <a href="product.html?id=${product.id}">Read More</a>
     </div>`

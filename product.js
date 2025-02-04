@@ -2,14 +2,14 @@ let productId = new URLSearchParams(window.location.search).get("id)");
 
 let productContainer = document.querySelector(".product_container");
 
-fetch(`https://kea-alt-del.dk/t7/api/products/${product.id}`)
+fetch(`https://kea-alt-del.dk/t7/api/products/${productId}`)
   .then((response) => response.json())
 
   .then((data) => {
     productContainer.innerHTML = `
         <div class="product_container">
             <div class="box11">
-                <img src="https://kea-alt-del.dk/t7/images/webp/640/${product.id}.webp" alt="${data.productdisplayname}">
+                <img src="https://kea-alt-del.dk/t7/images/webp/640/${productId}.webp" alt="">
             </div>
             <div class="box12">
                 <h2>Product Information</h2>
@@ -21,14 +21,15 @@ fetch(`https://kea-alt-del.dk/t7/api/products/${product.id}`)
                 <p>${data.productcolour}</p>
 
                 <h5>Price</h5>
-                <p>DKK ${product.price},-</p>
+                <p> ${data.price},- DKK</p>
+                <p> ${data.price},- DKK</p>
 
                 <h3>${data.productbrand}</h3>
                 <p>${data.productbrandbio}</p>
             </div>
             <div class="box13">
                 <h4>${data.productdisplayname}</h4>
-                <p>${data.productid}</p>
+                <p>${data.id}</p>
 
                 <p>Choose a size</p>
 

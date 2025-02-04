@@ -190,6 +190,10 @@ p {
   visibility: visible;
 }
 
+.discountprice {
+  visibility: hidden;
+}
+
 .box11,
 .box12,
 .box13 {
