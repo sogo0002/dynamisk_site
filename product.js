@@ -25,7 +25,7 @@ fetch(`https://kea-alt-del.dk/t7/api/products/${productId}`)
                 <p> ${data.price},- DKK</p>
 
                 <h3>${data.productbrand}</h3>
-                <p>${data.productbrandbio}</p>
+                <p>$product.productbrandbio}</p>
             </div>
             <div class="box13">
                 <h4>${data.productdisplayname}</h4>
@@ -45,13 +45,3 @@ fetch(`https://kea-alt-del.dk/t7/api/products/${productId}`)
 
 `;
   });
-
-//   .join("");
-// productContainer.innerHTML = markup;
-
-// .then(showProduct);
-
-// function showProduct(data) {
-//   const markup = data
-//     .map(
-//       (product) =>

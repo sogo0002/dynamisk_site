@@ -78,12 +78,7 @@ p {
 }
 
 @media (min-width: 800px) {
-  .box1,
-  .box2,
-  .box3,
-  .box4,
-  .box5,
-  .box6 {
+  .box1 {
     background-color: var(--secondary);
     color: var(--secondary);
     height: 60px;
@@ -96,25 +91,15 @@ p {
     display: flex;
     justify-content: center; /* Centrer horisontalt */
   }
-  .box1 a,
-  .box2 a,
-  .box3 a,
-  .box4 a,
-  .box5 a,
-  .box6 a {
+  .box1 a {
     color: var(--dark);
     text-decoration: none;
     font-family: Helvetica, sans-serif;
     font-size: 1.5rem;
   }
 
-  .box1 a:hover,
-  .box2 a:hover,
-  .box3 a:hover,
-  .box4 a:hover,
-  .box5 a:hover,
-  .box6 a:hover {
-    color: var(--dark);
+  .box1 a:hover {
+    color: var(--light);
     transition: 0.5s;
   }
 }
@@ -122,23 +107,17 @@ p {
 .productlist_container {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  gap: 10px;
+  gap: 15px;
 }
 
-.box7,
-.box8,
-.box9,
-.box10 {
+.box7 {
   display: grid;
   grid-template-rows: subgrid;
   grid-row: auto / span 6;
   position: relative;
 }
 
-.box7 a,
-.box8 a,
-.box9 a,
-.box10 a {
+.box7 a {
   color: var(--dark);
   text-decoration: none;
   text-wrap: none;

@@ -25,7 +25,7 @@ function showList(products) {
                 <a href="product.html"><img src="https://kea-alt-del.dk/t7/images/webp/640/${product.id}.webp"
                         alt=${product.productdisplayname}></a>
                 <h3>${product.productdisplayname}</h3>
-                <p>${product.category}</p>
+                <p>${product.brandname}</p>
                 <div>
                 <p>${product.price},- DKK</p>
                 <p class="discountprice ${product.discount && "isOnSale"}" <span>${Math.floor(product.price * (1 - product.discount / 100))}<span/>,- DKK</p>
