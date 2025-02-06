@@ -22,14 +22,12 @@ function showList(products) {
     .map(
       (product) => `  
       <div class="box7">
-                <a href="product.html"><img src="https://kea-alt-del.dk/t7/images/webp/640/${product.id}.webp"
+                <a href="product.html?id=${product.id}"><img src="https://kea-alt-del.dk/t7/images/webp/640/${product.id}.webp"
                         alt=${product.productdisplayname}></a>
                 <h3>${product.productdisplayname}</h3>
                 <p>${product.brandname}</p>
-                <div>
                 <p>${product.price},- DKK</p>
                 <p class="discountprice ${product.discount && "isOnSale"}" <span>${Math.floor(product.price * (1 - product.discount / 100))}<span/>,- DKK</p>
-                </div>
                 <div class="discount ${product.discount && "isOnSale"}" >
                     <p>${product.discount}%</p>
                 </div>

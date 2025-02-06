@@ -124,15 +124,15 @@ p {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+.box7 img {
+  border-radius: 10px;
+  box-shadow: 4px 4px;
+  color: rgb(231, 230, 230);
+}
+
 .box9 img,
 .box10 img {
   opacity: 15%;
-}
-
-.product_container {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 10px;
 }
 
 .soldout {
@@ -160,6 +160,9 @@ p {
   left: 80%;
   visibility: hidden;
 }
+.discountprice {
+  visibility: hidden;
+}
 
 .isOnSale {
   visibility: visible;
@@ -169,8 +172,19 @@ p {
   visibility: visible;
 }
 
-.discountprice {
-  visibility: visible;
+.product_container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0;
+  width: 76.5%;
+  margin: 0 auto; /* Centrerer containeren */
+  justify-content: center; /* Centrerer grid-elementerne horisontalt */
+  border: 1px solid var(--secondary);
+  background-color: var(--secondary);
+  border-radius: 30px;
+}
+.product_container > * {
+  justify-content: center;
 }
 
 .box11,
@@ -178,16 +192,32 @@ p {
 .box13 {
   display: grid;
   grid-column: auto;
+  gap: 20px;
 }
 
-.box13 {
-  background-color: var(--dark);
-  padding: 3rem;
-  border-radius: 30px 30px 30px 30px;
+.box11 {
+  grid-column: 1 / 2;
+  width: 100%;
+}
+
+.box11 img {
+  width: 30dvw;
+  border-radius: 30px;
 }
 
 .box12 {
   padding: 3rem;
+  background-color: rgb(253, 253, 253);
+  grid-column: 2 / 3;
+  width: 100%;
+}
+
+.box13 {
+  background-color: rgb(233, 233, 233);
+  padding: 3rem;
+  border-radius: 30px 30px 30px 30px;
+  grid-column: 3 / 4;
+  width: 100%;
 }
 
 .addbutton {
@@ -200,12 +230,29 @@ p {
 }
 
 .addbutton:hover {
-  background-color: var(--light);
-  color: var(--dark);
+  background-color: var(--grey);
+  color: var(--secondary);
 }
 
 /**************COLORS AND BACKGROUNDS***************/
 
 body {
   background-color: whitesmoke;
+}
+
+/************** SIZE  ***************/
+.size-selector {
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  margin: 20px auto; /* Centrerer boksen */
+  font-family: Arial, sans-serif;
+}
+
+select {
+  padding: 15px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  cursor: pointer;
 }
