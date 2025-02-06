@@ -20,22 +20,33 @@ html {
 
 main {
   margin: 4rem;
+  background-color: whitesmoke;
+}
+
+body {
+  background-color: whitesmoke;
 }
 
 /************ TEXT ********************************/
 
 header {
   text-align: center;
-  margin: 4rem;
+  background-color: whitesmoke;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 10px 10px rgba(45, 45, 45, 0.106);
+  margin-top: 2rem;
 }
 
-header a {
+header a.logo {
   color: var(--tetiary);
-  font-size: 4rem;
+  font-size: 3.5rem;
   font-family: Helvetica, sans-serif;
   text-decoration: none;
   text-wrap: none;
-  font-weight: 900;
+  font-weight: 600;
+  font-style: italic;
 }
 
 header a:hover {
@@ -50,7 +61,9 @@ h2 {
 
 h3 {
   font-family: Arial, Helvetica, sans-serif;
-  font-size: x-large;
+  font-style: normal;
+  font-weight: 600;
+  font-size: large;
 }
 
 h4 {
@@ -65,7 +78,66 @@ h5 {
 
 p {
   font-family: Arial, Helvetica, sans-serif;
+  font-size: medium;
 }
+
+nav {
+  display: flex; /* Sørger for at elementerne ligger ved siden af hinanden */
+  justify-content: center; /* Centrerer links horisontalt */
+  align-items: center; /* Centrerer dem vertikalt */
+  padding: 30px 0;
+}
+
+nav ul {
+  display: flex; /* Lægger <li>-elementerne på en linje */
+  list-style: none; /* Fjerner punkttegn */
+  gap: 20px; /* Afstand mellem links */
+  padding: 0;
+  margin: 0;
+}
+
+nav li {
+  display: inline-block; /* Sørger for, at hvert link holder sin størrelse */
+}
+
+nav a {
+  font-size: x-large;
+  text-decoration: none;
+  color: #aaa9a9;
+  font-family: Arial, Helvetica, sans-serif;
+  border: 0.5px solid rgb(236, 234, 234);
+  box-shadow: 5px 5px lightgray;
+  height: 35px;
+  width: 150px;
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* nav li {
+  list-style: none;
+  display: flex;
+  flex-direction: row; 
+  align-items: center; 
+  justify-content: center; 
+  gap: 20px; 
+  padding: 10px;
+} */
+
+/* nav li a {
+  font-size: x-large;
+  text-decoration: none;
+  text-wrap: none;
+  color: #aaa9a9;
+  font-family: Arial, Helvetica, sans-serif;
+  border: 2px solid var(--tetiary);
+  box-shadow: 10px 10px lightgray;
+  height: 35px;
+  width: 150px;
+  background-color: #ffffff;
+  display: inline-block;
+} */
 
 /************ Layout ********************************/
 
@@ -232,12 +304,6 @@ p {
 .addbutton:hover {
   background-color: var(--grey);
   color: var(--secondary);
-}
-
-/**************COLORS AND BACKGROUNDS***************/
-
-body {
-  background-color: whitesmoke;
 }
 
 /************** SIZE  ***************/

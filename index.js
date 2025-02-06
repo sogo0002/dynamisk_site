@@ -11,7 +11,6 @@ function showCategoryList(data) {
   const markup = data
     .map(
       (category) => `
-
 <div class="box1">
       <a href="productlist.html?category=${category.category}">${category.category}</a>
 </div>
