@@ -20,22 +20,33 @@ html {
 
 main {
   margin: 4rem;
+  background-color: whitesmoke;
+}
+
+body {
+  background-color: whitesmoke;
 }
 
 /************ TEXT ********************************/
 
 header {
   text-align: center;
-  margin: 3rem;
+  background-color: whitesmoke;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 10px 10px rgba(45, 45, 45, 0.106);
+  margin-top: 2rem;
 }
 
-header a {
+header a.logo {
   color: var(--tetiary);
-  font-size: 4rem;
+  font-size: 3.5rem;
   font-family: Helvetica, sans-serif;
   text-decoration: none;
   text-wrap: none;
-  font-weight: 900;
+  font-weight: 600;
+  font-style: italic;
 }
 
 header a:hover {
@@ -50,7 +61,9 @@ h2 {
 
 h3 {
   font-family: Arial, Helvetica, sans-serif;
-  font-size: x-large;
+  font-style: normal;
+  font-weight: 600;
+  font-size: large;
 }
 
 h4 {
@@ -65,7 +78,66 @@ h5 {
 
 p {
   font-family: Arial, Helvetica, sans-serif;
+  font-size: medium;
 }
+
+nav {
+  display: flex; /* Sørger for at elementerne ligger ved siden af hinanden */
+  justify-content: center; /* Centrerer links horisontalt */
+  align-items: center; /* Centrerer dem vertikalt */
+  padding: 30px 0;
+}
+
+nav ul {
+  display: flex; /* Lægger <li>-elementerne på en linje */
+  list-style: none; /* Fjerner punkttegn */
+  gap: 20px; /* Afstand mellem links */
+  padding: 0;
+  margin: 0;
+}
+
+nav li {
+  display: inline-block; /* Sørger for, at hvert link holder sin størrelse */
+}
+
+nav a {
+  font-size: x-large;
+  text-decoration: none;
+  color: #aaa9a9;
+  font-family: Arial, Helvetica, sans-serif;
+  border: 0.5px solid rgb(236, 234, 234);
+  box-shadow: 5px 5px lightgray;
+  height: 35px;
+  width: 150px;
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* nav li {
+  list-style: none;
+  display: flex;
+  flex-direction: row; 
+  align-items: center; 
+  justify-content: center; 
+  gap: 20px; 
+  padding: 10px;
+} */
+
+/* nav li a {
+  font-size: x-large;
+  text-decoration: none;
+  text-wrap: none;
+  color: #aaa9a9;
+  font-family: Arial, Helvetica, sans-serif;
+  border: 2px solid var(--tetiary);
+  box-shadow: 10px 10px lightgray;
+  height: 35px;
+  width: 150px;
+  background-color: #ffffff;
+  display: inline-block;
+} */
 
 /************ Layout ********************************/
 
@@ -73,17 +145,12 @@ p {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr;
-  gap: 10px;
+  gap: 1px;
   justify-items: center;
 }
 
 @media (min-width: 800px) {
-  .box1,
-  .box2,
-  .box3,
-  .box4,
-  .box5,
-  .box6 {
+  .box1 {
     background-color: var(--secondary);
     color: var(--secondary);
     height: 60px;
@@ -96,25 +163,15 @@ p {
     display: flex;
     justify-content: center; /* Centrer horisontalt */
   }
-  .box1 a,
-  .box2 a,
-  .box3 a,
-  .box4 a,
-  .box5 a,
-  .box6 a {
+  .box1 a {
     color: var(--dark);
     text-decoration: none;
     font-family: Helvetica, sans-serif;
     font-size: 1.5rem;
   }
 
-  .box1 a:hover,
-  .box2 a:hover,
-  .box3 a:hover,
-  .box4 a:hover,
-  .box5 a:hover,
-  .box6 a:hover {
-    color: var(--dark);
+  .box1 a:hover {
+    color: var(--light);
     transition: 0.5s;
   }
 }
@@ -122,38 +179,32 @@ p {
 .productlist_container {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  gap: 10px;
+  gap: 15px;
 }
 
-.box7,
-.box8,
-.box9,
-.box10 {
+.box7 {
   display: grid;
   grid-template-rows: subgrid;
   grid-row: auto / span 6;
   position: relative;
 }
 
-.box7 a,
-.box8 a,
-.box9 a,
-.box10 a {
+.box7 a {
   color: var(--dark);
   text-decoration: none;
   text-wrap: none;
   font-family: Arial, Helvetica, sans-serif;
 }
 
+.box7 img {
+  border-radius: 10px;
+  box-shadow: 4px 4px;
+  color: rgb(231, 230, 230);
+}
+
 .box9 img,
 .box10 img {
   opacity: 15%;
-}
-
-.product_container {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 10px;
 }
 
 .soldout {
@@ -165,6 +216,7 @@ p {
   align-items: center;
   position: absolute;
   border-radius: 20px;
+  visibility: hidden;
 }
 
 .discount {
@@ -178,6 +230,33 @@ p {
   border-radius: 20px;
   /* transform: translateX(430%); */
   left: 80%;
+  visibility: hidden;
+}
+.discountprice {
+  visibility: hidden;
+}
+
+.isOnSale {
+  visibility: visible;
+}
+
+.isSoldOut {
+  visibility: visible;
+}
+
+.product_container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0;
+  width: 76.5%;
+  margin: 0 auto; /* Centrerer containeren */
+  justify-content: center; /* Centrerer grid-elementerne horisontalt */
+  border: 1px solid var(--secondary);
+  background-color: var(--secondary);
+  border-radius: 30px;
+}
+.product_container > * {
+  justify-content: center;
 }
 
 .box11,
@@ -185,16 +264,32 @@ p {
 .box13 {
   display: grid;
   grid-column: auto;
+  gap: 20px;
 }
 
-.box13 {
-  background-color: var(--dark);
-  padding: 3rem;
-  border-radius: 30px 30px 30px 30px;
+.box11 {
+  grid-column: 1 / 2;
+  width: 100%;
+}
+
+.box11 img {
+  width: 30dvw;
+  border-radius: 30px;
 }
 
 .box12 {
   padding: 3rem;
+  background-color: rgb(253, 253, 253);
+  grid-column: 2 / 3;
+  width: 100%;
+}
+
+.box13 {
+  background-color: rgb(233, 233, 233);
+  padding: 3rem;
+  border-radius: 30px 30px 30px 30px;
+  grid-column: 3 / 4;
+  width: 100%;
 }
 
 .addbutton {
@@ -207,6 +302,23 @@ p {
 }
 
 .addbutton:hover {
-  background-color: var(--light);
-  color: var(--dark);
+  background-color: var(--grey);
+  color: var(--secondary);
+}
+
+/************** SIZE  ***************/
+.size-selector {
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  margin: 20px auto; /* Centrerer boksen */
+  font-family: Arial, sans-serif;
+}
+
+select {
+  padding: 15px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  cursor: pointer;
 }
